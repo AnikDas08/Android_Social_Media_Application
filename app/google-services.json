@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "761236192702",
+    "firebase_url": "https://fir-image-69f7f-default-rtdb.firebaseio.com",
+    "project_id": "fir-image-69f7f",
+    "storage_bucket": "fir-image-69f7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761236192702:android:0cfd1b47f839fc88b18def",
+        "android_client_info": {
+          "package_name": "com.example.firebaseimage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKuNpgWxbrPsdluklwUGki-qpv34R9d5k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761236192702:android:61b68f9e3536fa62b18def",
+        "android_client_info": {
+          "package_name": "com.example.social_media_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKuNpgWxbrPsdluklwUGki-qpv34R9d5k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

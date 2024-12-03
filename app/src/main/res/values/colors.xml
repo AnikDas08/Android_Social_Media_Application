@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange">#C8451B</color>
+    <color name="blue">#1735DD</color>
+    <color name="herecolor">#A8A3A3</color>
+    <color name="green">#009688</color>
+    <color name="tabcolor">#09BEAD</color>
+    <color name="transferent">#00000000</color>
+</resources>
