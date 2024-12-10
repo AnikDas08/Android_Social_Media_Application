@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:padding="10dp"
+    android:background="#EDE8E8"
+    android:id="@+id/OpenNotificationViewId"
     android:layout_height="wrap_content">
 
     <de.hdodenhof.circleimageview.CircleImageView

@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.Social_Media_App" parent="Base.Theme.Social_Media_App" />
+
 </resources>

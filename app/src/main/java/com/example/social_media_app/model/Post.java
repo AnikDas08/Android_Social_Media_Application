@@ -7,17 +7,26 @@ public class Post {
     String postDescription;
     long postAt;
     int postLike;
+    int postComment;
 
-    public Post(String postId, String postBy, String postImage, String postDescription, long postAt, int postLike) {
+    public Post(String postId, String postBy, String postImage, String postDescription, long postAt, int postLike, int postComment) {
         this.postId = postId;
         this.postBy = postBy;
         this.postImage = postImage;
         this.postDescription = postDescription;
         this.postAt = postAt;
         this.postLike=postLike;
+        this.postComment=postComment;
+    }
+    public Post() {
     }
 
-    public Post() {
+    public int getPostComment() {
+        return postComment;
+    }
+
+    public void setPostComment(int postComment) {
+        this.postComment = postComment;
     }
 
     public int getPostLike() {

@@ -1,6 +1,7 @@
 package com.example.social_media_app.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,19 +11,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.social_media_app.CommentActivity;
 import com.example.social_media_app.R;
 import com.example.social_media_app.databinding.DashboardSimpleBinding;
+import com.example.social_media_app.model.Notification;
 import com.example.social_media_app.model.Post;
 import com.example.social_media_app.model.User;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.viewHolder> {
     ArrayList<Post> lists;
@@ -46,6 +51,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.view
                 .load(model.getPostImage())
                 .placeholder(R.drawable.placeholders)
                 .into(viewHolder.binding.postImg);
+        viewHolder.binding.comment.setText(model.getPostComment()+"");
         String descript=model.getPostDescription();
         if(!descript.isEmpty()){
             viewHolder.binding.PostDescriptionId.setText(model.getPostDescription());
@@ -122,6 +128,17 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.view
                                                 @Override
                                                 public void onSuccess(Void unused) {
                                                     viewHolder.binding.like.setCompoundDrawablesWithIntrinsicBounds(R.drawable.likeimg,0,0,0);
+                                                    Notification notification=new Notification();
+                                                    notification.setNotificationBy(FirebaseAuth.getInstance().getUid());
+                                                    notification.setType("like");
+                                                    notification.setNotificationAt(new Date().getTime());
+                                                    notification.setPostId(model.getPostId());
+                                                    notification.setPostBy(model.getPostBy());
+                                                    FirebaseDatabase.getInstance().getReference()
+                                                            .child("notification")
+                                                            .child(model.getPostBy())
+                                                            .push()
+                                                            .setValue(notification);
                                                 }
                                             });
                                         }
@@ -134,6 +151,17 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.view
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+
+        viewHolder.binding.comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, CommentActivity.class);
+                intent.putExtra("postId",model.getPostId());
+                intent.putExtra("postBy",model.getPostBy());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
             }
         });
     }

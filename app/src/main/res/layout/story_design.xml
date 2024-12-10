@@ -9,12 +9,12 @@
         android:layout_width="@dimen/_130mdp"
         android:layout_height="@dimen/_85mdp"
         android:layout_marginEnd="16dp"
-        android:scaleType="centerCrop"
         android:src="@drawable/anik"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:riv_border_color="#333333"
+        android:scaleType="fitXY"
         app:riv_border_width="2dip"
         app:riv_corner_radius="10dip"
         app:riv_mutate_background="true"
@@ -34,14 +34,18 @@
         app:layout_constraintStart_toStartOf="@id/StoryImage"
         app:layout_constraintTop_toTopOf="@id/StoryImage"/>
 
-    <View
-        android:id="@+id/view"
+    <com.devlomi.circularstatusview.CircularStatusView
+        android:id="@+id/statuscircle"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/ProfileImage"
         app:layout_constraintEnd_toEndOf="@+id/ProfileImage"
         app:layout_constraintStart_toStartOf="@+id/ProfileImage"
-        app:layout_constraintTop_toTopOf="@+id/ProfileImage" />
+        app:layout_constraintTop_toTopOf="@+id/ProfileImage"
+        app:portion_color="@color/green"
+        app:portion_spacing="6dp"
+        app:portion_width="2dp"
+        app:portions_count="6"/>
 
     <ImageView
         android:id="@+id/Storytype"

@@ -1,45 +1,41 @@
 package com.example.social_media_app.model;
 
+import java.util.ArrayList;
+
 public class StoryModel {
-    int story,storyType,profile;
-    String name;
+    String storyBy;
+    long storyAt;
+    ArrayList<UserStory> stories;
 
-    public StoryModel(int story, int storyType, int profile, String name) {
-        this.story = story;
-        this.storyType = storyType;
-        this.profile = profile;
-        this.name = name;
+    public StoryModel(String storyBy, long storyAt, ArrayList<UserStory> stories) {
+        this.storyBy = storyBy;
+        this.storyAt = storyAt;
+        this.stories = stories;
+    }
+    public StoryModel() {
     }
 
-    public int getStory() {
-        return story;
+    public ArrayList<UserStory> getStories() {
+        return stories;
     }
 
-    public void setStory(int story) {
-        this.story = story;
+    public void setStories(ArrayList<UserStory> stories) {
+        this.stories = stories;
     }
 
-    public int getStoryType() {
-        return storyType;
+    public String getStoryBy() {
+        return storyBy;
     }
 
-    public void setStoryType(int storyType) {
-        this.storyType = storyType;
+    public void setStoryBy(String storyBy) {
+        this.storyBy = storyBy;
     }
 
-    public int getProfile() {
-        return profile;
+    public long getStoryAt() {
+        return storyAt;
     }
 
-    public void setProfile(int profile) {
-        this.profile = profile;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setStoryAt(long storyAt) {
+        this.storyAt = storyAt;
     }
 }
