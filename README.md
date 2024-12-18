@@ -29,4 +29,7 @@
 - Users can view posts from others and interact by liking and commenting(Home Fragment)
 - Receive real-time notifications when users make likes and comments(NotificationFragments)
 
-  
+###Contact
+**For further suggestions:**
+*Developer:* Anik
+*Email: anikd5656@gmail.com
